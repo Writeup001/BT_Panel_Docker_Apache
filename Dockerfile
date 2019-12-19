@@ -11,5 +11,3 @@ RUN sh install_6.0.sh && \
     ln BT_Panel_Docker_apache.sh /etc/profile.d/BT_Panel_Docker_apache.sh && \
     chkconfig --add BT_Panel_Docker_apache.sh && \
     chkconfig BT_Panel_Docker_apache.sh on
-EXPOSE 80 888 8888
-ENTRYPOINT ["/bin/bash"]
