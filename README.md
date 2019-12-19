@@ -8,7 +8,7 @@
 
 宝塔面板 Docker 镜像 Nginx 版：https://github.com/Writeup001/BT_Panel_Docker_Nginx
 
-此镜像具体环境配置如下：
+此镜像已安装 Web 服务所需要的服务环境，下载即可搭建网站。具体环境配置如下：
 ```
 CentOS 7
 
@@ -33,10 +33,10 @@ docker build -t bt_panel_apache .
 ```
 docker pull writeup/bt_panel_apache
 ```
-这种方法是直接从 Docker Hub 上直接拉取下来的，
+这种方法是直接从 Docker Hub 上直接拉取下来的，如果你所在的地区对于访问 Docker Hub 不是很流畅，推荐你使用国内镜像站进行拉取。
 
 ## 使用方法
-宝塔面板（bt.cn）需要开放的端口为 8888|888|80|443|20|21 分别为后台地址端口，phpMyAdmin 端口，Web 端口，HTTPS 端口，FTP 传输端口，FTP 接受端口。
+宝塔面板（bt.cn）需要开放的端口为 **8888|888|80|443|20|21** 分别为后台地址端口，phpMyAdmin 端口，Web 端口，HTTPS 端口，FTP 传输端口，FTP 接受端口。
 
 因为此镜像中仅安装了基本的 LNMP 服务，所以，仅需开放 8888 端口和 80 端口即可。如果你需要 HTTPS 的话也可以另行开启。
 
@@ -59,13 +59,15 @@ docker rm -f bt_panel_apache
 ## 默认帐号密码
 如果你是从 Docker Hub 上拉取下来的，那么帐号密码默认为以下：
 ```
-Bt-Panel-URL: http://IP:8888/3da2098a
+Bt-Panel-URL: http://IP:8888/ecdeea55
 
-username: 7a2hvykv
+username: zecukooe
 
-password: 7e58e233
+password: 01eb9258
 ```
-如果你想修改默认密码，则可以进入 Docker 内之后进行修改，可以在终端输入命令 ```bt``` 进行查看修改相关信息。
+其中 IP 为你服务器的 IP 地址，端口后面的字符串为宝塔面板（bt.cn）的安全登陆入口，username 和 password 分别为登陆帐号和密码。
+
+如果你想修改默认密码，则可以进入 Docker 内之后进行修改，如何进入 Docker 请参考上方内容，进入可以在 Docker 容器内的终端输入命令 ```bt``` 进行查看修改相关信息。
 
 宝塔Linux面板命令大全：https://www.bt.cn/btcode.html
 
